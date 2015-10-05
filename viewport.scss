@@ -53,7 +53,19 @@ $media-register : (
 
 );
 
-@mixin respond-to($media) {
-  $media-query : map-get($media-register, $media);
+@function generate-content-media-query($breakpoint) {
+  @return 'only screen
+           and (min-width : ' + $breakpoint + ')';
+}
+
+@mixin respond-to($media, $breakpoint : '0px') {
+  $media-query : '';
+
+  @if $media == 'content' {
+    $media-query : generate-content-media-query($breakpoint);
+  } @else {
+    $media-query : map-get($media-register, $media);
+  }
+
   @media #{$media-query} { @content; }
 }

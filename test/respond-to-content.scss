@@ -1,0 +1,10 @@
+@import '../viewport.scss';
+
+p {
+  font-size: 52px;
+  color: red;
+
+  @include respond-to('content', '500px') {
+    color: green;
+  }
+}
