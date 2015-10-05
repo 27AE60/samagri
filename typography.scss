@@ -18,6 +18,10 @@ $default: (
 @mixin author {}
 
 /* Typography Helpers Methods */
+@function em($pixels, $context: map-get($default,'font-size')) {
+  @return #{$pixels/$context}em;
+}
+
 @mixin get-font-weight($font, $type)  {
   @each $name,$typeset in $typesets {
     @if $name == $font {
