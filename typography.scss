@@ -6,7 +6,7 @@ $typesets : (
 );
 
 $default: (
-  'font-size': 16px,
+  'font-size-px': 16,
   'line-height': 1.4
 );
 
@@ -18,7 +18,7 @@ $default: (
 @mixin author {}
 
 /* Typography Helpers Methods */
-@function em($pixels, $context: map-get($default,'font-size')) {
+@function em($pixels, $context: map-get($default,'font-size-px')) {
   @return #{$pixels/$context}em;
 }
 
@@ -31,7 +31,7 @@ $default: (
 }
 
 @mixin font-reset ($font-size, $line-height) {
-  font-size: $font-size;
+  font-size: $font-size + 'px';
   line-height: $line-height;
 }
 
