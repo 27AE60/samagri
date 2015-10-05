@@ -140,9 +140,13 @@ Viewport helps you to manage your break points. viewport default gives you the s
 
 ### How to get Samagri
 go to folder where you want to get the three files. Then copy the line below and run
-`wget . https://raw.githubusercontent.com/27AE60/samagri/master/pallete.scss https://raw.githubusercontent.com/27AE60/samagri/master/typography.scss https://raw.githubusercontent.com/27AE60/samagri/master/viewport.scss`
 
-_Sorry for the inconvenience will imporve slowly_
+```
+wget . https://raw.githubusercontent.com/27AE60/samagri/master/pallete.scss https://raw.githubusercontent.com/27AE60/samagri/master/typography.scss https://raw.githubusercontent.com/27AE60/samagri/master/viewport.scss
+```
+
+> Sorry for the inconvenience will imporve slowly 
+
 ----
 
 ###Usage
@@ -169,4 +173,6 @@ _Sorry for the inconvenience will imporve slowly_
 }
 ```
 
-> Suggestions are open, use the issue tab to raise questions, bugs, enhancment etc. Feel Free to Contribute !!
+----
+
+### Suggestions are open, use the issue tab to raise questions, bugs, enhancment etc. Feel Free to Contribute !!
