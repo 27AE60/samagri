@@ -1,0 +1,50 @@
+/* Fonts Register */
+$fonts : (
+);
+
+$typesets : (
+);
+
+$default: (
+  'font-size': 16px,
+  'line-height': 1.4
+);
+
+/* Text Style Helpers */
+@mixin heading {}
+@mixin paragraph {} 
+@mixin caption {}
+@mixin date {}
+@mixin author {}
+
+/* Typography Helpers Methods */
+@mixin get-font-weight($font, $type)  {
+  @each $name,$typeset in $typesets {
+    @if $name == $font {
+      font-weight: map-get($typeset, $type); 
+    }
+  }
+}
+
+@mixin font-reset ($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin font($name, $type : 'regular', $size : 'null', $line-height : 'null')  {
+  font-family : map-get($fonts, $name);
+  @include get-font-weight($name, $type); 
+  
+  @if $size != 'null' { font-size: $size; }
+  @if $line-height != 'null' { line-height: $line-height; }
+}
+
+/* Reset Default Typeset. */
+body  { 
+  @include font-reset(
+    map-get($default, 'font-size'), 
+    map-get($default, 'line-height')
+  );
+}
+
+
