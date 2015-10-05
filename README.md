@@ -1,12 +1,16 @@
 # Samagri 
+---
 
-CSS authoring helper files based on SASS. There are mainly 3 helper files **Pallete**, **Typography** and **Viewport**.
+CSS authoring helper files based on SASS. There are mainly 3 helper files 
 
+- pallete.scss
+- typography.scss
+- viewport.scss
 
-##### 1. Copy the three files to folder you like
+### 1. Pallete 
+Pallete manages all your color codes used in the project. you can register a colour hex code with respect to some name that you like or pantone name _(eg: PMS-2717: #A5BAE0)_.
 
-##### 2. Add your colour to pallete.scss
-
+##### Color Registry
 ```
 /* Color Pallete */
 
@@ -19,8 +23,22 @@ $pallete : (
 );
 ```
 
-##### 3. Register your fonts and typeset in typography.scss
+#### @mixin **color**( *property*, *name* )
+- **property:** `bg` - background color, `color` - font color and `border` - border color
+- **name:** that you defined in the color registry for corresponding hex code.
 
+```
+.klass {
+	@include color('pure-white');
+	@include color('bg', 'pure-black');
+	@include color('border', 'us');
+}
+```
+
+### 2. Typography
+Typography `typography.scss` helps you to manage font and corresponding typeset using in the project. now a days lot of people started using multiple fonts in there projects.
+
+##### Font Registry
 ```
 /* Fonts Register */
 
@@ -28,7 +46,12 @@ $fonts : (
   'georgia': 'georgia',
   'lato' : 'Lato'
 );
+```
 
+##### Typeset Registry
+typeset register helps you to map the font-weight to meaning full tag.
+
+```
 $typesets : (
   'georgia': (
     'regular': 400
@@ -41,9 +64,31 @@ $typesets : (
     'extra-bold' : 900
   )
 );
+```
+
+#### @mixin **font**( *name*, *type*, *size*, *line_height* )
+
+- **name:** Font name. eg: Lato, Georgia etc
+- **type:** font weight tag. eg: bold, extra-bold etc
+- **size** Font size. eg: 16px, 2em etc
+- **line_height** ofcourse line height eg: 1.4, 20px etc
 
 ```
-##### 4. Thats its!!!
+.klass {
+	@include font('georgia', 'regular', 18px, 1.4);
+}
+```
+
+#### @function **em**( *font_size*, *base_font_size* )
+
+- **font_size:** font size in pixel you want to convert
+- **base_font_size:** default font size.
+
+```
+.klass {
+	@include font('georgia', 'regular', em(18), 1.4);
+}
+```
 
 ----
 
