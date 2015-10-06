@@ -142,7 +142,7 @@ Viewport helps you to manage your break points. viewport default gives you the s
 go to folder where you want to get the three files. Then copy the line below and run
 
 ```
-wget . https://raw.githubusercontent.com/27AE60/samagri/master/pallete.scss https://raw.githubusercontent.com/27AE60/samagri/master/typography.scss https://raw.githubusercontent.com/27AE60/samagri/master/viewport.scss
+wget -qO- https://raw.githubusercontent.com/27AE60/samagri/master/samagri.sh | bash
 ```
 
 > Sorry for the inconvenience will imporve slowly 
