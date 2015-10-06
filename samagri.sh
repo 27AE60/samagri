@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Hello, " + $USER
+echo "Hello, " $USER
 echo "- creating directory"
 mkdir samagri
 cd samagri
