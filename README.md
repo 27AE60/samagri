@@ -22,15 +22,16 @@ $pallete : (
 );
 ```
 
-#### @mixin **color**( *property*, *name* )
-- **property:** `bg` - background color, `color` - font color and `border` - border color
+#### @mixin **color**( *name*, *property*, *important* )
 - **name:** that you defined in the color registry for corresponding hex code.
+- **property:** `bg` - background color, `color` - font color and `border` - border color
+- **important:** `bool` make the property important
 
 ```
 .klass {
 	@include color('pure-white');
-	@include color('bg', 'pure-black');
-	@include color('border', 'us');
+	@include color('pure-black', 'bg');
+	@include color('us', 'border');
 }
 ```
 
