@@ -36,10 +36,15 @@ $default: (
   line-height: $line-height;
 }
 
-@mixin font($name, $type : 'regular', $size : 'null', $line-height : 'null')  {
-  font-family : map-get($fonts, $name);
-  @include get-font-weight($name, $type); 
-  
+@mixin font($name: 'inherit', $type : 'regular', $size : 'null', $line-height : 'null')  {
+  @if $name != 'inherit'  {
+    font-family : map-get($fonts, $name);
+    @include get-font-weight($name, $type);
+  }@else {
+    font-family : inherit;
+    font-weight: $type;
+  }
+
   @if $size != 'null' { font-size: $size; }
   @if $line-height != 'null' { line-height: $line-height; }
 }
